@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Vortex Arena - the next-generation gaming hub. Explore futuristic titles, track live leaderboards, view your tactical telemetry stats, and join the elite cyber squad.">
+    <meta name="keywords" content="gaming, cyberpunk, futuristic, online gaming, gaming leaderboard, vortex arena, sci-fi gaming, rpg, fps, moba">
+    <meta name="author" content="Vortex Arena Team">
+    <meta property="og:title" content="Vortex Arena - The Ultimate Cyberpunk Gaming Hub">
+    <meta property="og:description" content="Step into the future of gaming. Track live tournaments, view personal telemetry, and join the cyber gaming revolution.">
+    <meta property="og:image" content="assets/hero_banner.jpg">
+    <meta property="og:type" content="website">
+    <title>Vortex Arena | The Ultimate Futuristic Gaming Hub</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor"></div>
+    <div id="custom-cursor-glow" class="custom-cursor-glow"></div>
+
+    <!-- Cyber Background Grid Layer -->
+    <div class="cyber-grid-overlay"></div>
+    <div class="neon-radial-glow"></div>
+
+    <!-- Header / Navigation -->
+    <header class="main-header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo-link" id="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" class="logo-svg">
+                        <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" class="logo-hexagon" />
+                        <polygon points="50,25 75,40 75,60 50,75 25,60 25,40" class="logo-inner-hex" />
+                        <line x1="50" y1="10" x2="50" y2="90" class="logo-line" />
+                    </svg>
+                </div>
+                <span class="logo-text">VORTEX <span class="accent-text">ARENA</span></span>
+            </a>
+            
+            <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active" data-target="hero">Home</a></li>
+                    <li><a href="#games" class="nav-link" data-target="games">Library</a></li>
+                    <li><a href="#leaderboard" class="nav-link" data-target="leaderboard">Leaderboard</a></li>
+                    <li><a href="#stats" class="nav-link" data-target="stats">Telemetry</a></li>
+                    <li><a href="#signup" class="nav-link" data-target="signup">Join Arena</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-secondary nav-btn" id="sound-toggle-btn" aria-label="Toggle Audio Feedback">
+                    <svg viewBox="0 0 24 24" class="icon" id="sound-icon">
+                        <!-- Sound ON icon default -->
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                    <span id="sound-btn-text">Audio: ON</span>
+                </button>
+                <button class="btn btn-primary nav-btn" id="login-btn">
+                    <span class="btn-text">CONNECT WALLET</span>
+                    <span class="btn-glitch-layer"></span>
+                </button>
+            </div>
+            
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="#hero" class="mobile-link">Home</a></li>
+                <li><a href="#games" class="mobile-link">Library</a></li>
+                <li><a href="#leaderboard" class="mobile-link">Leaderboard</a></li>
+                <li><a href="#stats" class="mobile-link">Telemetry</a></li>
+                <li><a href="#signup" class="mobile-link">Join Arena</a></li>
+            </ul>
+            <div class="mobile-actions">
+                <button class="btn btn-primary" id="mobile-connect-btn">CONNECT WALLET</button>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg" style="background-image: url('assets/hero_banner.jpg');"></div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-hud animate-fade-in">
+                        <span class="pulse-dot"></span>
+                        <span class="hud-label">SYSTEMS ONLINE // REGION: AMER-EAST</span>
+                    </div>
+                    <h1 class="hero-title animate-glitch">
+                        THE NEXT GEN OF <span class="neon-glow-text">CYBER ATHLETICS</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Step into a highly immersive gaming destination. Track live competitive telemetry, challenge elite squads, and dominate the digital landscape.
+                    </p>
+                    <div class="hero-actions-container">
+                        <a href="#games" class="btn btn-primary btn-large" id="hero-cta-primary">
+                            <span class="btn-text">EXPLORE LIBRARY</span>
+                            <span class="btn-glitch-layer"></span>
+                        </a>
+                        <a href="#stats" class="btn btn-outline btn-large" id="hero-cta-secondary">
+                            <span>VIEW TELEMETRY</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Floating Interactive Hologram Card -->
+                <div class="hero-hud-card-wrapper">
+                    <div class="hud-card glass-panel" id="hero-hud-card">
+                        <div class="hud-card-header">
+                            <span class="hud-terminal-icon">>_</span>
+                            <span class="hud-terminal-title">LIVE TELEMETRY FEED</span>
+                            <span class="hud-status green-status">ACTIVE</span>
+                        </div>
+                        <div class="hud-card-body">
+                            <div class="telemetry-row">
+                                <span class="tel-label">SERVER LATENCY:</span>
+                                <span class="tel-val green-text" id="hud-latency">12ms</span>
+                            </div>
+                            <div class="telemetry-row">
+                                <span class="tel-label">ACTIVE COMBATANTS:</span>
+                                <span class="tel-val cyan-text" id="hud-players">142,891</span>
+                            </div>
+                            <div class="telemetry-row">
+                                <span class="tel-label">TOURNAMENT PRIZEPOOL:</span>
+                                <span class="tel-val magenta-text" id="hud-prize">$250,000</span>
+                            </div>
+                            <div class="telemetry-visualizer">
+                                <div class="vis-bar bar-1"></div>
+                                <div class="vis-bar bar-2"></div>
+                                <div class="vis-bar bar-3"></div>
+                                <div class="vis-bar bar-4"></div>
+                                <div class="vis-bar bar-5"></div>
+                                <div class="vis-bar bar-6"></div>
+                                <div class="vis-bar bar-7"></div>
+                                <div class="vis-bar bar-8"></div>
+                                <div class="vis-bar bar-9"></div>
+                                <div class="vis-bar bar-10"></div>
+                            </div>
+                        </div>
+                        <div class="hud-card-footer">
+                            <span class="hud-time" id="hud-timestamp">SECURE CONNECTION SECURED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse-icon">
+                    <span class="wheel"></span>
+                </span>
+                <span class="scroll-text">SCROLL TO ASCEND</span>
+            </div>
+        </section>
+
+        <!-- Game Library Section -->
+        <section id="games" class="games-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <div class="sub-header-hud">
+                        <span class="hud-line"></span>
+                        <span class="hud-label-small">DATABASE_QUERY: CORE_TITLES</span>
+                    </div>
+                    <h2 class="section-title">THE <span class="gradient-text">GAME SPHERE</span></h2>
+                    <p class="section-desc">Filter and inspect our flagship combat simulation modules currently deployed across the global network.</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="filter-controls" id="filter-controls">
+                    <button class="filter-btn active" data-filter="all">ALL MODULES</button>
+                    <button class="filter-btn" data-filter="rpg">RPG / SANDBOX</button>
+                    <button class="filter-btn" data-filter="fps">FPS / SHOOTER</button>
+                    <button class="filter-btn" data-filter="moba">MOBA / ARENA</button>
+                </div>
+
+                <!-- Games Grid -->
+                <div class="games-grid" id="games-grid">
+                    <!-- Game Card 1: RPG -->
+                    <article class="game-card glass-panel" data-category="rpg" id="card-rpg">
+                        <div class="game-image-wrapper">
+                            <img src="assets/game_rpg.jpg" alt="Aether Chronicle RPG Concept Art" class="game-image" loading="lazy">
+                            <span class="game-badge rpg-badge">RPG / STRATEGY</span>
+                            <div class="game-hover-overlay">
+                                <button class="btn btn-primary card-hover-btn" data-modal="modal-rpg">LAUNCH DETAILS</button>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-title">AETHER CHRONICLES</h3>
+                            <p class="game-summary">Explore massive cyberpunk archipelagos, upgrade nano-implants, and forge your legend.</p>
+                            <div class="game-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">ACTIVE INSTANCES</span>
+                                    <span class="meta-value">42.8k</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">RATING</span>
+                                    <span class="meta-value rating-val">9.8/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game Card 2: FPS -->
+                    <article class="game-card glass-panel" data-category="fps" id="card-fps">
+                        <div class="game-image-wrapper">
+                            <img src="assets/game_fps.jpg" alt="Neon Strike FPS Combat Scene" class="game-image" loading="lazy">
+                            <span class="game-badge fps-badge">FPS / tactical</span>
+                            <div class="game-hover-overlay">
+                                <button class="btn btn-primary card-hover-btn" data-modal="modal-fps">LAUNCH DETAILS</button>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-title">NEON STRIKE</h3>
+                            <p class="game-summary">High-octane tactical combat in glowing vertical metropolis arenas. Team up and override grids.</p>
+                            <div class="game-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">ACTIVE INSTANCES</span>
+                                    <span class="meta-value">68.2k</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">RATING</span>
+                                    <span class="meta-value rating-val">9.5/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game Card 3: MOBA -->
+                    <article class="game-card glass-panel" data-category="moba" id="card-moba">
+                        <div class="game-image-wrapper">
+                            <img src="assets/game_moba.jpg" alt="Cosmic Clash Space MOBA Combat Scene" class="game-image" loading="lazy">
+                            <span class="game-badge moba-badge">MOBA / ARENA</span>
+                            <div class="game-hover-overlay">
+                                <button class="btn btn-primary card-hover-btn" data-modal="modal-moba">LAUNCH DETAILS</button>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <h3 class="game-title">COSMIC CLASH</h3>
+                            <p class="game-summary">Command custom starships in space orbital battle stations. Destroy core matrices.</p>
+                            <div class="game-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">ACTIVE INSTANCES</span>
+                                    <span class="meta-value">31.9k</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">RATING</span>
+                                    <span class="meta-value rating-val">9.2/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Tournament Leaderboard Section -->
+        <section id="leaderboard" class="leaderboard-section section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="sub-header-hud">
+                        <span class="hud-line"></span>
+                        <span class="hud-label-small">CYBERNETIC_BROADCAST: SEASON_4_LIVE</span>
+                    </div>
+                    <h2 class="section-title">TOURNAMENT <span class="neon-glow-text">LEADERBOARD</span></h2>
+                    <p class="section-desc">Dynamic real-time scoreboard of active combat simulation champions.</p>
+                </div>
+
+                <div class="leaderboard-container glass-panel">
+                    <div class="leaderboard-header">
+                        <div class="col-rank">RANK</div>
+                        <div class="col-combatant">COMBATANT</div>
+                        <div class="col-title">FAVORITE MODULE</div>
+                        <div class="col-score">CORE POINTS</div>
+                        <div class="col-status">STATUS</div>
+                    </div>
+                    <div class="leaderboard-body" id="leaderboard-body">
+                        <!-- Dynamic ranks injected via JS -->
+                        <div class="leaderboard-row top-three rank-1" id="row-0">
+                            <div class="col-rank"><span class="rank-number">1</span><span class="rank-medal">🥇</span></div>
+                            <div class="col-combatant">
+                                <div class="avatar">
+                                    <span class="avatar-letter">X</span>
+                                </div>
+                                <span class="player-name">XenonForce_99</span>
+                            </div>
+                            <div class="col-title">NEON STRIKE</div>
+                            <div class="col-score text-cyan" id="score-0">84,930</div>
+                            <div class="col-status"><span class="status-dot online"></span>ONLINE</div>
+                        </div>
+                        <div class="leaderboard-row top-three rank-2" id="row-1">
+                            <div class="col-rank"><span class="rank-number">2</span><span class="rank-medal">🥈</span></div>
+                            <div class="col-combatant">
+                                <div class="avatar">
+                                    <span class="avatar-letter">N</span>
+                                </div>
+                                <span class="player-name">Nighthawk_X</span>
+                            </div>
+                            <div class="col-title">AETHER CHRONICLES</div>
+                            <div class="col-score text-cyan" id="score-1">82,145</div>
+                            <div class="col-status"><span class="status-dot in-game"></span>IN COMBAT</div>
+                        </div>
+                        <div class="leaderboard-row top-three rank-3" id="row-2">
+                            <div class="col-rank"><span class="rank-number">3</span><span class="rank-medal">🥉</span></div>
+                            <div class="col-combatant">
+                                <div class="avatar">
+                                    <span class="avatar-letter">C</span>
+                                </div>
+                                <span class="player-name">CyberGhost</span>
+                            </div>
+                            <div class="col-title">COSMIC CLASH</div>
+                            <div class="col-score text-cyan" id="score-2">79,905</div>
+                            <div class="col-status"><span class="status-dot online"></span>ONLINE</div>
+                        </div>
+                        <div class="leaderboard-row" id="row-3">
+                            <div class="col-rank"><span class="rank-number">4</span></div>
+                            <div class="col-combatant">
+                                <div class="avatar">
+                                    <span class="avatar-letter">R</span>
+                                </div>
+                                <span class="player-name">ReaperPrime</span>
+                            </div>
+                            <div class="col-title">NEON STRIKE</div>
+                            <div class="col-score text-cyan" id="score-3">71,450</div>
+                            <div class="col-status"><span class="status-dot offline"></span>OFFLINE</div>
+                        </div>
+                        <div class="leaderboard-row" id="row-4">
+                            <div class="col-rank"><span class="rank-number">5</span></div>
+                            <div class="col-combatant">
+                                <div class="avatar">
+                                    <span class="avatar-letter">P</span>
+                                </div>
+                                <span class="player-name">PhantomViper</span>
+                            </div>
+                            <div class="col-title">AETHER CHRONICLES</div>
+                            <div class="col-score text-cyan" id="score-4">68,220</div>
+                            <div class="col-status"><span class="status-dot in-game"></span>IN COMBAT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Player Telemetry & Stats Dashboard Section -->
+        <section id="stats" class="stats-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <div class="sub-header-hud">
+                        <span class="hud-line"></span>
+                        <span class="hud-label-small">TACTICAL_HUD: INDIVIDUAL_TELEMETRY</span>
+                    </div>
+                    <h2 class="section-title">YOUR PLAYER <span class="gradient-text">TELEMETRY</span></h2>
+                    <p class="section-desc">Interactive dashboard of your simulated pilot credentials. Interact with the HUD to run real-time updates.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <!-- Column 1: Pilot Card -->
+                    <div class="stats-col glass-panel" id="pilot-profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar-container">
+                                <div class="profile-avatar">
+                                    <svg viewBox="0 0 100 100" class="profile-avatar-svg">
+                                        <circle cx="50" cy="50" r="45" class="profile-border-circle" />
+                                        <path d="M50 15 A25 25 0 0 1 50 65 A25 25 0 0 1 50 15 Z M15 85 A40 40 0 0 1 85 85" class="profile-placeholder-icon" />
+                                    </svg>
+                                </div>
+                                <span class="hud-avatar-scan"></span>
+                            </div>
+                            <div class="profile-info">
+                                <h3 class="pilot-name" id="pilot-name">RECRUIT_PILOT_77</h3>
+                                <div class="pilot-rank-badge">RANK: CADET (LEVEL 1)</div>
+                            </div>
+                        </div>
+                        <div class="profile-divider"></div>
+                        <div class="profile-body">
+                            <!-- Progress Circle -->
+                            <div class="progress-container">
+                                <div class="progress-ring-wrapper">
+                                    <svg class="progress-ring" width="120" height="120">
+                                        <circle class="progress-ring-bg" stroke="#1f2538" stroke-width="8" fill="transparent" r="50" cx="60" cy="60"/>
+                                        <circle id="xp-progress-ring" class="progress-ring-fill" stroke="url(#cyan-magenta-grad)" stroke-width="8" fill="transparent" r="50" cx="60" cy="60" stroke-dasharray="314.16" stroke-dashoffset="314.16"/>
+                                        <defs>
+                                            <linearGradient id="cyan-magenta-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#00f3ff" />
+                                                <stop offset="100%" stop-color="#ff007f" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="progress-ring-label">
+                                        <span id="xp-percent-text" class="percent-val">0%</span>
+                                        <span class="percent-sub">XP CAP</span>
+                                    </div>
+                                </div>
+                                <div class="progress-text-info">
+                                    <div class="stat-lbl">CURRENT EXPERIENCE</div>
+                                    <div class="stat-val" id="xp-numbers">0 / 2,500 XP</div>
+                                    <button class="btn btn-primary btn-small" id="trigger-training-btn">INJECT SYSTEM XP</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Tactical Diagnostics -->
+                    <div class="stats-col glass-panel" id="telemetry-diagnostics">
+                        <h3 class="panel-subtitle">TACTICAL DIAGNOSTICS</h3>
+                        <div class="diagnostic-bars">
+                            <div class="diag-bar-group">
+                                <div class="diag-lbl">
+                                    <span>AIM REFLEXES (CYBER-LINKED)</span>
+                                    <span id="stat-reflex-val">42%</span>
+                                </div>
+                                <div class="diag-bar-bg">
+                                    <div class="diag-bar-fill fill-cyan" id="stat-reflex-bar" style="width: 42%;"></div>
+                                </div>
+                            </div>
+                            <div class="diag-bar-group">
+                                <div class="diag-lbl">
+                                    <span>STRATEGIC MATRIX SYNC</span>
+                                    <span id="stat-sync-val">65%</span>
+                                </div>
+                                <div class="diag-bar-bg">
+                                    <div class="diag-bar-fill fill-magenta" id="stat-sync-bar" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <div class="diag-bar-group">
+                                <div class="diag-lbl">
+                                    <span>STARSHIP COMBAT EFFICIENCY</span>
+                                    <span id="stat-combat-val">28%</span>
+                                </div>
+                                <div class="diag-bar-bg">
+                                    <div class="diag-bar-fill fill-yellow" id="stat-combat-bar" style="width: 28%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Achievements Grid -->
+                        <h3 class="panel-subtitle section-divider-top">UNLOCK SYNC STATUS</h3>
+                        <div class="achievements-grid">
+                            <div class="badge-item locked" id="badge-reflex" title="Requires Cyber-Reflexes at 80%">
+                                <div class="badge-icon">⚡</div>
+                                <span class="badge-title">REFLEX MAX</span>
+                            </div>
+                            <div class="badge-item unlocked" id="badge-recruit" title="Enlisted Cadet into the Vortex Database">
+                                <div class="badge-icon">🎖️</div>
+                                <span class="badge-title">VORTEX CADET</span>
+                            </div>
+                            <div class="badge-item locked" id="badge-master" title="Requires Level 5 Pilot Matrix Sync">
+                                <div class="badge-icon">👑</div>
+                                <span class="badge-title">GRID MASTER</span>
+                            </div>
+                            <div class="badge-item locked" id="badge-alpha" title="Join Arena Newsletter Dispatch">
+                                <div class="badge-icon">✉️</div>
+                                <span class="badge-title">ALPHA SUBSCRIBER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Join Section -->
+        <section id="signup" class="signup-section section-padding">
+            <div class="container signup-container">
+                <div class="signup-glass glass-panel">
+                    <div class="signup-content">
+                        <div class="badge-hud animate-pulse-slow">
+                            <span class="hud-label">JOIN CYBER NEWSLETTER</span>
+                        </div>
+                        <h2 class="section-title">SUBSCRIBE TO <span class="neon-glow-text">THE DISPATCH</span></h2>
+                        <p class="section-desc">Receive critical network bulletins, beta keys, game updates, and gear drops directly to your communication arrays.</p>
+                        
+                        <!-- Newsletter Form -->
+                        <form id="newsletter-form" class="newsletter-form" novalidate>
+                            <div class="input-group">
+                                <input type="email" id="subscriber-email" class="cyber-input" placeholder="ENTER CODES / EMAIL ADDRESS" aria-label="Email Address" required>
+                                <span class="input-border-effect"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="subscribe-submit-btn">
+                                <span class="btn-text">INITIALIZE DEPLOYMENT</span>
+                                <span class="btn-glitch-layer"></span>
+                            </button>
+                        </form>
+                        <div class="form-feedback" id="form-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="logo-text">VORTEX <span class="accent-text">ARENA</span></span>
+                <p class="footer-tagline">Providing next-level gaming telemetry and futuristic battle simulations since 2026.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-link-group">
+                    <h4>ARENA SYSTEMS</h4>
+                    <ul>
+                        <li><a href="#games">Game Spheres</a></li>
+                        <li><a href="#leaderboard">Score boards</a></li>
+                        <li><a href="#stats">Telemetry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-group">
+                    <h4>NETWORK PROTOCOLS</h4>
+                    <ul>
+                        <li><a href="#">Rules of engagement</a></li>
+                        <li><a href="#">Privacy Core</a></li>
+                        <li><a href="#">Terms of Grid</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <span class="copyright">© 2026 VORTEX ARENA. ALL RIGHTS SECURED UNDER GRID REGULATION 9-A.</span>
+                <div class="socials">
+                    <a href="#" aria-label="Discord Protocol">DISCORD</a>
+                    <a href="#" aria-label="Terminal Feed / Twitter">X.COM</a>
+                    <a href="#" aria-label="Matrix Stream / Twitch">TWITCH</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Game Detail Modals -->
+    <!-- Modal RPG -->
+    <div class="modal-overlay" id="modal-rpg" aria-hidden="true">
+        <div class="modal-content glass-panel">
+            <button class="modal-close" aria-label="Close Modal">&times;</button>
+            <!-- Info View -->
+            <div class="modal-body-layout" id="rpg-info-view">
+                <div class="modal-visual" style="background-image: url('assets/game_rpg.jpg');"></div>
+                <div class="modal-details">
+                    <h3 class="modal-title text-magenta">AETHER CHRONICLES</h3>
+                    <div class="modal-meta-grid">
+                        <div class="modal-meta-item">
+                            <span class="modal-label">STATUS</span>
+                            <span class="modal-value text-green">ONLINE / SEEDING</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <span class="modal-label">TYPE</span>
+                            <span class="modal-value">SANDBOX RPG</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <span class="modal-label">ENGINE LEVEL</span>
+                            <span class="modal-value">VORTEX v2.8</span>
+                        </div>
+                    </div>
+                    <p class="modal-desc">
+                        Aether Chronicles transports players into an immersive cyberpunk archipelago where corporate empires clash in virtual cyberspace. Hack orbital satellite matrices and override security grid nodes.
+                    </p>
+                    <button class="btn btn-primary" id="launch-rpg-btn">DEPLOY DESTRUCT SYSTEM</button>
+                </div>
+            </div>
+            <!-- Playable Game View -->
+            <div class="game-view-layout" id="rpg-game-view" style="display: none;">
+                <div class="game-header">
+                    <h3 class="modal-title text-magenta">GRID HACKER // DECRYPTION</h3>
+                    <div class="game-hud-stats">
+                        <span>MOVES: <span id="rpg-moves" class="text-cyan">0</span></span>
+                        <span>GRID STATUS: <span id="rpg-status" class="text-magenta">LOCKED</span></span>
+                    </div>
+                </div>
+                <div class="rpg-game-container">
+                    <div class="hacker-grid" id="hacker-grid"></div>
+                </div>
+                <div class="game-controls">
+                    <button class="btn btn-secondary game-back-btn" data-view="rpg-info-view" data-modal="modal-rpg">ABORT SEQUENCE</button>
+                    <button class="btn btn-outline" id="rpg-reset-btn">RESET GRID</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal FPS -->
+    <div class="modal-overlay" id="modal-fps" aria-hidden="true">
+        <div class="modal-content glass-panel">
+            <button class="modal-close" aria-label="Close Modal">&times;</button>
+            <!-- Info View -->
+            <div class="modal-body-layout" id="fps-info-view">
+                <div class="modal-visual" style="background-image: url('assets/game_fps.jpg');"></div>
+                <div class="modal-details">
+                    <h3 class="modal-title text-cyan">NEON STRIKE</h3>
+                    <div class="modal-meta-grid">
+                        <div class="modal-meta-item">
+                            <span class="modal-label">STATUS</span>
+                            <span class="modal-value text-green">ONLINE / ACTIVE</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <span class="modal-label">TYPE</span>
+                            <span class="modal-value">TACTICAL SHOOTER</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <span class="modal-label">ENGINE LEVEL</span>
+                            <span class="modal-value">VORTEX v3.1</span>
+                        </div>
+                    </div>
+                    <p class="modal-desc">
+                        Neon Strike represents the ultimate competitive cyber-reflex team shooter. Engage in vertical grid battles, coordinate nanite shield drops, and blast targets before the EMP count expires.
+                    </p>
+                    <button class="btn btn-primary" id="launch-fps-btn">DEPLOY COMBAT LOADOUT</button>
+                </div>
+            </div>
+            <!-- Playable Game View -->
+            <div class="game-view-layout" id="fps-game-view" style="display: none;">
+                <div class="game-header">
+                    <h3 class="modal-title text-cyan">NEON STRIKE // REFLEX</h3>
+                    <div class="game-hud-stats">
+                        <span>TIMER: <span id="fps-timer" class="text-yellow">15.0s</span></span>
+                        <span>SCORE: <span id="fps-score" class="text-cyan">0</span></span>
+                    </div>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="fps-canvas" width="700" height="320"></canvas>
+                    <div class="game-start-overlay" id="fps-start-overlay">
+                        <button class="btn btn-primary btn-large" id="fps-start-btn">INITIALIZE CORE LINK</button>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="btn btn-secondary game-back-btn" data-view="fps-info-view" data-modal="modal-fps">ABORT PRACTICE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal MOBA -->
+    <div class="modal-overlay" id="modal-moba" aria-hidden="true">
+        <div class="modal-content glass-panel">
+            <button class="modal-close" aria-label="Close Modal">&times;</button>
+            <!-- Info View -->
+            <div class="modal-body-layout" id="moba-info-view">
+                <div class="modal-visual" style="background-image: url('assets/game_moba.jpg');"></div>
+                <div class="modal-details">
+                    <h3 class="modal-title text-yellow">COSMIC CLASH</h3>
+                    <div class="modal-meta-grid">
+                        <div class="modal-meta-item">
+                            <span class="modal-label">STATUS</span>
+                            <span class="modal-value text-green">ONLINE / QUEUING</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <span class="modal-label">TYPE</span>
+                            <span class="modal-value">ORBITAL MOBA</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <span class="modal-label">ENGINE LEVEL</span>
+                            <span class="modal-value">VORTEX v1.9</span>
+                        </div>
+                    </div>
+                    <p class="modal-desc">
+                        Cosmic Clash tests tactical coordination on celestial battle platforms. Command flagship pilots with custom starship weapons arrays and clear asteroid debris zones.
+                    </p>
+                    <button class="btn btn-primary" id="launch-moba-btn">LAUNCH FLIGHT MATRIX</button>
+                </div>
+            </div>
+            <!-- Playable Game View -->
+            <div class="game-view-layout" id="moba-game-view" style="display: none;">
+                <div class="game-header">
+                    <h3 class="modal-title text-yellow">COSMIC CLASH // MAIN</h3>
+                    <div class="game-hud-stats">
+                        <span>ENERGY LEVEL: <span id="moba-score" class="text-cyan">0</span></span>
+                        <span>SHIELD HP: <span id="moba-hp" class="text-green">100%</span></span>
+                    </div>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="moba-canvas" width="700" height="320"></canvas>
+                    <div class="game-start-overlay" id="moba-start-overlay">
+                        <button class="btn btn-primary btn-large" id="moba-start-btn">ENGAGE THRUSTERS</button>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button class="btn btn-secondary game-back-btn" data-view="moba-info-view" data-modal="modal-moba">ABORT SHIP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Script -->
+    <script src="app.js"></script>
+</body>
+</html>
